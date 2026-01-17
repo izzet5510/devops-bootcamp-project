@@ -1,0 +1,8 @@
+cat > mkdocs.yml <<'EOF'
+site_name: DevOps Final Lab - Izzat Taufik
+site_url: https://izzet5510.github.io/devops-final-lab/
+theme:
+  name: material
+nav:
+  - Home: index.md
+EOF
