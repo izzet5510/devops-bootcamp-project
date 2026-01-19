@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # devops-final-lab
 
 # DevOps Bootcamp Project
@@ -27,3 +28,30 @@ This project demonstrates a complete DevOps workflow including:
 3. Deploy application as Docker container
 4. Configure monitoring with Prometheus and Grafana
 5. Publish documentation using GitHub Pages
+=======
+---
+
+## 13. Bonus (Optional)
+
+### Secure Infrastructure Design
+- Web application is accessed via Cloudflare Tunnel
+- No direct public exposure of internal services
+- Monitoring services are isolated on a dedicated server
+
+### Least-Privilege IAM
+- Dedicated IAM user for GitHub Actions
+- Permissions limited to Amazon ECR access only
+- Root AWS account is not used for CI/CD
+
+### Infrastructure as Code
+- Terraform is used to provision EC2 instances, security groups, and networking
+- Ansible is used for application deployment and monitoring configuration
+
+### CI/CD Automation
+- GitHub Actions is used to:
+  - Build Docker image
+  - Push Docker image to AWS ECR
+- Ansible is used to:
+  - Pull image from ECR
+  - Deploy container to the web server
+>>>>>>> ff49a46 (Add bonus CI/CD and security documentation)
