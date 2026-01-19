@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+HEAD
 # devops-final-lab
 
 # DevOps Bootcamp Project
@@ -28,8 +28,6 @@ This project demonstrates a complete DevOps workflow including:
 3. Deploy application as Docker container
 4. Configure monitoring with Prometheus and Grafana
 5. Publish documentation using GitHub Pages
-=======
----
 
 ## 13. Bonus (Optional)
 
