@@ -1,0 +1,25 @@
+- name: Deploy my-devops-project container on web server
+  hosts: web
+  become: true
+  vars:
+    aws_region: ap-southeast-1
+    ecr_registry: 419095190824.dkr.ecr.ap-southeast-1.amazonaws.com
+    image: "{{ ecr_registry }}/devops-bootcamp/final-project-izzattaufik:latest"
+    container_name: my-devops-project
+  tasks:
+    - name: Login to ECR
+      shell: |
+        aws ecr get-login-password --region {{ aws_region }} \
+        | docker login --username AWS --password-stdin {{ ecr_registry }}
+
+    - name: Pull image
+      shell: docker pull {{ image }}
+
+    - name: Remove existing container if any
+      shell: docker rm -f {{ container_name }} || true
+
+    - name: Run container (publish to port 80)
+      shell: |
+        docker run -d --name {{ container_name }} \
+        -p 80:8080 \
+        {{ image }}
